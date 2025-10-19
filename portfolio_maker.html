@@ -148,3 +148,10 @@
         function animateSections() {
             gsap.to('.section', { opacity: 1, scale: 1, stagger: 0.1, duration: 0.5, ease: 'power2.out' });
         }
+
+        function previewPortfolio() {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = '<button class="btn btn-secondary mb-3" onclick="closePreview()">Close</button>' + canvas.innerHTML;
+            preview.style.display = 'block';
+            gsap.to(preview, { scale: 1, duration: 0.5, ease: 'power2.out' });
+        }
