@@ -155,3 +155,13 @@
             preview.style.display = 'block';
             gsap.to(preview, { scale: 1, duration: 0.5, ease: 'power2.out' });
         }
+        
+        function closePreview() {
+            const preview = document.getElementById('preview');
+            gsap.to(preview, {
+                scale: 0,
+                duration: 0.5,
+                ease: 'power2.in',
+                onComplete: () => preview.style.display = 'none'
+            });
+        }
