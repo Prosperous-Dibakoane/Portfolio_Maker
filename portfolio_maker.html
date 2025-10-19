@@ -207,3 +207,19 @@
                 showNotification('Portfolio loaded!');
             }
         }
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            gsap.to(notification, { scale: 1, opacity: 1, duration: 0.3, ease: 'power2.out' });
+            setTimeout(() => {
+                gsap.to(notification, {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power2.in',
+                    onComplete: () => notification.style.display = 'none'
+                });
+            }, 2000);
+        }
+    </script>
