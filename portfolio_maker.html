@@ -194,3 +194,7 @@
             showNotification('Portfolio exported!');
         }
 
+        function savePortfolio() {
+            localStorage.setItem('portfolio', canvas.innerHTML);
+            showNotification('Portfolio saved!');
+        }
