@@ -97,3 +97,18 @@
         }
     </style>
 </head>
+<body>
+    <div class="container builder-container my-5">
+        <div class="tools">
+            <h4 class="text-white">Add Sections</h4>
+            <div class="tool-item" draggable="true" data-type="about">About</div>
+            <div class="tool-item" draggable="true" data-type="projects">Projects</div>
+            <div class="tool-item" draggable="true" data-type="skills">Skills</div>
+            <div class="tool-item" draggable="true" data-type="contact">Contact</div>
+            <button class="btn btn-primary mt-3" onclick="previewPortfolio()">Preview</button>
+            <button class="btn btn-success mt-3" onclick="exportPortfolio()">Export</button>
+            <button class="btn btn-info mt-3" onclick="savePortfolio()">Save</button>
+            <button class="btn btn-info mt-3" onclick="loadPortfolio()">Load</button>
+        </div>
+        <div class="canvas" id="canvas"></div>
+    </div>
