@@ -131,3 +131,16 @@
                 e.dataTransfer.setData('type', item.dataset.type);
             });
         });
+
+
+        canvas.addEventListener('dragover', e => e.preventDefault());
+        canvas.addEventListener('drop', e => {
+            e.preventDefault();
+            const type = e.dataTransfer.getData('type');
+            const section = document.createElement('div');
+            section.className = 'section';
+            section.dataset.type = type;
+            section.innerHTML = templates[type] + '<button class="btn btn-danger btn-sm mt-2" onclick="this.parentElement.remove(); animateSections()">Remove</button>';
+            canvas.appendChild(section);
+            animateSections();
+        });
