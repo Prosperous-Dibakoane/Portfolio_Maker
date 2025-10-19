@@ -198,3 +198,12 @@
             localStorage.setItem('portfolio', canvas.innerHTML);
             showNotification('Portfolio saved!');
         }
+
+        function loadPortfolio() {
+            const saved = localStorage.getItem('portfolio');
+            if (saved) {
+                canvas.innerHTML = saved;
+                animateSections();
+                showNotification('Portfolio loaded!');
+            }
+        }
