@@ -144,3 +144,7 @@
             canvas.appendChild(section);
             animateSections();
         });
+
+        function animateSections() {
+            gsap.to('.section', { opacity: 1, scale: 1, stagger: 0.1, duration: 0.5, ease: 'power2.out' });
+        }
