@@ -125,3 +125,9 @@
         };
         gsap.to('.tools', { opacity: 1, duration: 1, ease: 'power2.out' });
         gsap.to('.tool-item', { opacity: 1, y: 0, stagger: 0.1, duration: 0.5, ease: 'power2.out', delay: 0.2 });
+
+        document.querySelectorAll('.tool-item').forEach(item => {
+            item.addEventListener('dragstart', e => {
+                e.dataTransfer.setData('type', item.dataset.type);
+            });
+        });
